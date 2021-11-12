@@ -1,0 +1,44 @@
+
+
+<app-nav-bar-blank></app-nav-bar-blank>
+<section class="login">
+    <br>
+    <div class="col-md-6 offset-md-3">
+
+        <h3> Admin Login </h3>
+
+        <form #loginForm="ngForm"  >
+
+            <div class="form-group">
+                <label for="UName">Username</label>
+                <input class="form-control" type="text" name="userName" #userName="ngModel" pattern="[a-zA-Z0-9\s]+"
+                    placeholder="Enter Your Username" minlength="3" maxlength="50" required ngModel >
+                <span *ngIf="userName.invalid && userName.touched" style="color: red;">Please Enter valid
+                    Username</span><br>
+            </div>
+
+            <div class="form-group">
+                <label for="Pwd">Password</label>
+                <input class="form-control" type="password" name="password" #password="ngModel" pattern="^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{6,12}$" 
+                placeholder="Enter Password"  required ngModel>
+                <span *ngIf="password.invalid && password.touched" style="color: red;">Password should contain atleast
+                    1-Uppercase,1-Lowercase, 1 special character & Length b/w 6-12. </span>
+            </div>
+
+            <br>
+
+            <input type="checkbox" name="checkbox">
+            <label for="checkbox">Remember Me</label>
+
+            <br>
+            <br>
+
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="btn-group">
+                    <button class="btn btn-info" type="submit" (click)="onSubmit(loginForm.value)">Login as Admin</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>

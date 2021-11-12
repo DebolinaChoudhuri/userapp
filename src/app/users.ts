@@ -1,10 +1,10 @@
 export class Users {
-    id!: number;
-    firstName!: string;
-    lastName!: string;
-    email!: string;
-    mobile!: string;
-    userName!: string;
-    password!: string;
+    public id!: number;
+    public  firstName!: string;
+    public lastName!: string;
+    public email!: string;
+    public  mobile!: string;
+    public  userName!: string;
+    public  password!: string;
 
 }

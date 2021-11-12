@@ -1,0 +1,72 @@
+<app-nav-bar-blank></app-nav-bar-blank>
+<div class="container">
+<section class="registration">
+    <div class="col-md-6 offset-md-3">
+
+        <h3> Register new user </h3>
+
+        <form #registerForm="ngForm" (ngSubmit)="registerForm.valid && onSubmit(registerForm.value)">
+
+            <div class="form-group">
+                <label for="FName">First Name</label>
+                <input class="form-control" type="text" name="firstName"  #firstName="ngModel" pattern="[a-zA-Z]+$"
+                    placeholder="First Name" minlength="3" maxlength="25" [(ngModel)] = "users1.firstName" required ngModel>
+                <span *ngIf="firstName.invalid && firstName.touched" style="color: red;">Please Enter Characters only and should be >3 </span>
+               
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label for="LName">Last Name</label>
+                <input class="form-control" type="text" name="lastName"  #lastName="ngModel" pattern="[a-zA-Z]+$"
+                    placeholder="Last Name" minlength="3" maxlength="25" [(ngModel)] = "users1.lastName" required ngModel>
+                <span *ngIf="lastName.invalid && lastName.touched" style="color: red;">Please Enter Characters only and should be >3</span><br>
+            </div>
+
+
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input class="form-control" type="email"   name="email" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    placeholder="Enter Email" required  [(ngModel)] = "users1.email" ngModel>
+                <span *ngIf="email.invalid && email.touched" style="color: red;">Please Enter valid format of email</span><br>
+            </div>
+
+
+            <div class="form-group">
+                <label for="Mobile">Mobile number</label>
+                <input class="form-control" type="number"  name="mobile" #mobile="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$"
+                [(ngModel)] = "users1.mobile" placeholder="Mobile Number" ngModel>
+                <span *ngIf="mobile.invalid && mobile.touched" style="color: red;">Please Enter valid format</span><br>
+            </div>
+
+            <div class="form-group">
+                <label for="UName">Username</label>
+                <input class="form-control" type="text"  name="userName" #userName="ngModel"
+                [(ngModel)] = "users1.userName" placeholder="Enter Your Username" minlength="3" maxlength="50" required ngModel>
+                <span *ngIf="userName.invalid && userName.touched" style="color: red;">Please Enter valid
+                    input</span><br>
+            </div>
+
+            <div class="form-group">
+                <label for="Pwd">Password</label>
+                <input class="form-control" type="password" name="password" #password="ngModel" 
+                [(ngModel)] = "users1.password"   placeholder="Enter Password" minlength="6" maxlength="12" required ngModel>
+                <span *ngIf="password.invalid && password.touched" style="color: red;">Please Enter valid format</span>
+            </div>
+
+            <input type="checkbox" #checkbox="ngModel" name="checkbox" required ngModel> <a href="#">Click to agree on Terms and Conditions</a>
+            <br>
+            <br>
+            <div class="d-flex justify-content-center align-items-center">
+
+                <div class="btn-group">
+                    <button class="btn btn-info" type="submit" onclick="AddUser()" [disabled]="registerForm.invalid">Register new
+                        user</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+</div>
