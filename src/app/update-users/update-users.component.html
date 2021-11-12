@@ -1,0 +1,65 @@
+
+<p>update user works!!!!!!!!!!!!!!!</p>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<div class="col-md-6 offset-md-3">
+    <h3> Update User </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+
+        <div class="form-group">
+            <label for="FName">First Name</label>
+            <input class="form-control" type="text" id = "firstName"
+            [(ngModel)] = "users.firstName" name="firstName" placeholder="First Name" required minlength="3" maxlength="25"  ><br>
+            </div>
+
+
+        <div class="form-group">
+            <label for="LName">Last Name</label>
+            <input class="form-control" type="text" id = "lastName"
+            [(ngModel)] = "users.lastName" name="lastName" placeholder="Last Name" required minlength="3" maxlength="25" ><br>
+            </div>
+    
+
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input class="form-control" type="email" id = "email"
+            [(ngModel)] = "users.email" name="email" placeholder="Enter Email" required><br>
+            </div>
+    
+
+            <div class="form-group">
+                <label for="Mobile">Mobile number</label>
+                <input class="form-control" type="number" id = "mobile"
+                [(ngModel)] = "users.mobile" name="mobile" placeholder="Mobile Number" min="1000000000" max="9999999999"><br>
+                </div>
+
+             <div class="form-group">
+                <label for="UName">Username</label>
+                <input class="form-control" type="text" id = "userName"
+                [(ngModel)] = "users.userName" name="userName" placeholder="Enter Your Username" required minlength="3" maxlength="50"><br>
+                </div>  
+             
+            <div class="form-group">
+                    <label for="Pwd">Password</label>
+                    <input class="form-control" type="password" id = "password"
+                    [(ngModel)] = "users.password" name="password" placeholder="Enter Password" required > 
+                </div>
+             
+                <input type="checkbox" > <a href="#">Click to agree on Terms and Conditions</a>
+                <br>
+                <br>
+                <div class="d-flex justify-content-center align-items-center">
+
+                    <div class="btn-group">
+                        <button class = "btn btn-info" type ="submit">Update user</button>
+                    </div>
+                </div>  
+          
+    </form>
+    </div> 
